@@ -7,7 +7,7 @@
     <!-- End Page Title -->
                 <!-- Section -->
                 <div class="it_section content_section hide_text_shadow">
-                    <div class="hm_no_overlay column_spacer2">
+                    <div class="hm_no_overlay">
                         <span class="bg_overlay_con"></span>
                         <div class="section_content container">
                             
@@ -18,9 +18,9 @@
                                     <!-- Column -->
                                     <div class="hm_columns show_xs show_sm show_md show_lg col-md-2col5 f_left">
                                         <div class="hm_column_out">
-                                            <div class="hm_column_con clearfix col_padd1 column_spacer1">
+                                            <div class="hm_column_con clearfix col_padd1">
                                                 
-                                                <div class="main_title title_boxed no_border no_line align_left tb_space10">
+<!--                                                <div class="main_title title_boxed no_border no_line align_left tb_space10">
                                                     <h2 class="bold1 fs20">Contact Details</h2>
                                                 </div>
                                                 
@@ -29,7 +29,7 @@
                                                 
                                                 <div class="hm_text_sc">
                                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable.
-                                                </div>
+                                                </div>-->
                                                 
                                                 <div class="clear"></div>
                                                 <div class="hm_divider divi_border2 divi_i_c divi_hi2 divi_space7"></div>
@@ -76,9 +76,9 @@
                                     <!-- Column -->
                                     <div class="hm_columns hm_label_block form_douple form_upper show_xs show_sm show_md show_lg col-md-3col5 f_left">
                                         <div class="hm_column_out">
-                                            <div class="hm_column_con clearfix col_padd1 column_spacer1">
+                                            <div class="hm_column_con clearfix col_padd1">
                                                 
-                                                <div class="main_title title_boxed no_border no_line align_left tb_space10">
+<!--                                                <div class="main_title title_boxed no_border no_line align_left tb_space10">
                                                     <h2 class="bold1 fs20">Let's Keep In Touch</h2>
                                                 </div>
                                                 
@@ -87,19 +87,19 @@
                                                 
                                                 <div class="hm_text_sc">
                                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable.
-                                                </div>
+                                                </div>-->
                                                 
                                                 <div class="clear"></div>
                                                 <div class="hm_divider divi_border2 divi_i_c divi_hi2 divi_space7"></div>
-
-                                                <form action="#" method="post" class="ideal-form" novalidate>
+                                                <!-- Form Start -->
+                                                <form action="/contact/contact" method="post" class="ideal-form" novalidate>
                                                     <div class="form_row clearfix">
                                                         <label for="your-name">
                                                             <span class="hm_field_name">Name</span>
                                                             <span class="hm_requires_star">*</span>
                                                         </label>
                                                         <span class="ideal-form-control-wrap your-name">
-                                                            <input type="text" name="your-name" value="" size="40" class="ideal-form-control ideal-cf-required" id="your-name" aria-required="true" aria-invalid="false" />
+                                                            <input type="text" name="data[Contact][name]" value="" size="40" class="ideal-form-control ideal-cf-required" id="your-name" aria-required="true" aria-invalid="false" />
                                                         </span>
                                                     </div>
                                                     <div class="form_row clearfix">
@@ -108,7 +108,7 @@
                                                             <span class="hm_requires_star">*</span>
                                                         </label>
                                                         <span class="ideal-form-control-wrap your-email">
-                                                            <input type="email" name="your-email" value="" size="40" class="ideal-form-control ideal-cf-required ideal-cf-validates-as-email" id="your-email" aria-required="true" aria-invalid="false" />
+                                                            <input type="email" name="data[Contact][email]" value="" size="40" class="ideal-form-control ideal-cf-required ideal-cf-validates-as-email" id="your-email" aria-required="true" aria-invalid="false" />
                                                         </span>
                                                     </div>
                                                     <div class="form_row clearfix">
@@ -116,7 +116,7 @@
                                                             <span class="hm_field_name">Subject</span>
                                                         </label>
                                                         <span class="ideal-form-control-wrap your-subject">
-                                                            <input type="text" name="your-subject" value="" size="40" class="ideal-form-control ideal-cf-validates-as-email" id="your-subject" aria-invalid="false" />
+                                                            <input type="text" name="data[Contact][subject]" value="" size="40" class="ideal-form-control ideal-cf-validates-as-email" id="your-subject" aria-invalid="false" />
                                                         </span>
                                                     </div>
                                                     <div class="form_row clearfix">
@@ -125,13 +125,12 @@
                                                             <span class="hm_requires_star">*</span>
                                                         </label>
                                                         <span class="ideal-form-control-wrap your-message">
-                                                            <textarea name="your-message" cols="40" rows="10" class="ideal-cf-required" id="your-message" aria-required="true" aria-invalid="false"></textarea>
+                                                            <textarea name="data[Contact][message]" cols="40" rows="10" class="ideal-cf-required" id="your-message" aria-required="true" aria-invalid="false"></textarea>
                                                         </span>
                                                     </div>
                                                     <div class="form_row clearfix">
                                                         <button value="submit" class="send_button f_right" type="submit"><span>Send Message</span></button>
                                                     </div>
-                                                    
                                                 </form>
                                                 <!-- End Form -->
                                                 

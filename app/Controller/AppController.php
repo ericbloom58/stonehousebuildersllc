@@ -36,8 +36,9 @@ class AppController extends Controller {
 
    public $components = array(
         'Flash',
+       'Session',
         'Auth' => array(
-            'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
+            'loginRedirect' => array('controller' => 'users', 'action' => 'index', 'admin' => true),
             'logoutRedirect' => array('controller' => 'pages','action' => 'display','home'),
             'authenticate' => array(
                 'Form' => array(
@@ -59,7 +60,21 @@ class AppController extends Controller {
     }
 
     public function beforeFilter() {
-        $this->Auth->allow('index', 'view', 'display');
+        $this->Auth->allow('index', 'view', 'display', 'home', 'about_us', 'news', 'galleries', 'buildwithus', 'gallery');
+        
+        
+	Router::connect('/', array('controller' => 'content', 'action' => 'home'));
+        Router::connect('/about', array('controller' => 'content', 'action' => 'about_us'));
+        Router::connect('/news', array('controller' => 'content', 'action' => 'news'));
+        Router::connect('/blog', array('controller' => 'content', 'action' => 'news'));
+        Router::connect('/galleries', array('controller' => 'content', 'action' => 'galleries'));
+        Router::connect('/buildwithus', array('controller' => 'content', 'action' => 'buildwithus'));
+    }
+    
+    public function beforeRender() {
+        if ($this->request['prefix'] == 'admin' || $this->request['prefix'] == 'ajax')
+			$this->layout = $this->request['prefix'];
+        $this->set('section', 'web');
     }
     //...
 }

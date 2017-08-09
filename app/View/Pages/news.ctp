@@ -12,20 +12,7 @@
                    
                    <!-- Post Block -->
                    <div class="blog_grid_block clearfix">
-                       <div class="feature_inner">
-                           <div class="feature_inner_corners">
-                               <div class="porto_galla owl_abs_arr"> 
-                                 <a href="http://placehold.it/1140x760" class="img_popup"> 
-                                     <img src="http://placehold.it/600x375" alt="Easy to Customize" /> 
-                                     <span class="hm_plus_i"><i class="ico-plus10 hm_iii"></i></span>
-                                 </a> 
-                                 <a href="http://placehold.it/1140x760" class="img_popup"> 
-                                     <img src="http://placehold.it/600x375" alt="Easy to Customize" /> 
-                                     <span class="hm_plus_i"><i class="ico-plus10 hm_iii"></i></span>
-                                 </a>
-                             </div>
-                           </div>
-                       </div>
+                       
                        <div class="blog_grid_con">
                            <h6 class="title"><a href="#">Easy to Customize</a></h6>
                            

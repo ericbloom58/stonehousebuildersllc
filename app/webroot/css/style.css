@@ -139,7 +139,7 @@ body, textarea {
 }
 body {
 	font-size: 14px;
-	color: #777;
+	color: #000;
 	position: relative;
 	line-height: 1.9;
 }
@@ -12114,6 +12114,7 @@ th {
 }
 #main_nav.f_right {
 	float: right;
+        margin-top: 20px;
 }
 .menu_light_transparent #site_header > div:not(.sticky_menu) #nav_bar, .menu_light_transparent #site_header > div {
 	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
@@ -15486,4 +15487,29 @@ to {
 .slideInUp {
 	-webkit-animation-name: slideInUp;
 	animation-name: slideInUp
+}
+
+// H2 For style sheet.
+h2 {
+ color: darkgreen;
+    font-weight: 800;
+    text-shadow: 2px 2px #aaa;
+}
+
+
+// ALERTS
+.message {
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+border-radius: 4px;
+color: #fff;
+font-weight: bold;
+font-size: 14px;
+background-color: #d73925;
+border-color: #d73936;
+}
+.success {
+    background-color: #449d44;
+    border-color: #449d66;
 }

@@ -81,7 +81,19 @@ class UsersController extends AppController {
         // Prior to 2.5 use
         // $this->request->onlyAllow('post');
 
-        $this->request->allowMethod('post');
+		$this->User->id = $id;
+		$user = $this->User->read();
+		if ($this->User->delete($id)){
+			$this->Flash->success(__('The user has been deleted.'));
+		} else {
+			$this->Flash-error(__('The user could not be deleted, please try again'));
+		}
+		return $this->redirect(array('action' => 'index'));
+	
+		
+        /*Old that did not work for some reason.
+		
+		$this->request->allowMethod('delete');
 
         $this->User->id = $id;
         if (!$this->User->exists()) {
@@ -92,7 +104,7 @@ class UsersController extends AppController {
             return $this->redirect(array('action' => 'index'));
         }
         $this->Flash->error(__('User was not deleted'));
-        return $this->redirect(array('action' => 'index'));
+        return $this->redirect(array('action' => 'index'));*/
     }
 
 }

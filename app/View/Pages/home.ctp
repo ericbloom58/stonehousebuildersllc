@@ -2,17 +2,17 @@
         <div class="hm_main_content full_content clearfix">
             <div class="entry-content">
                                     
-                <div id="rev_slider_35_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="scroll-effect5" data-source="gallery" style="background-color:#111111;padding:0px;margin-top:100px;">
-                <!-- START REVOLUTION SLIDER 5.3.1.5 fullscreen mode -->
+<!--                <div id="rev_slider_35_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="scroll-effect5" data-source="gallery" style="background-color:#111111;padding:0px;">
+                 START REVOLUTION SLIDER 5.3.1.5 fullscreen mode 
                     <div id="rev_slider_35_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.3.1.5">
                     <ul>
-                        <!-- SLIDE  -->
+                         SLIDE  
                         <li data-index="rs-116" data-transition="slidingoverlayup" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="http://placehold.it/100x50"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Slide-1" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                            <!-- MAIN IMAGE -->
+                             MAIN IMAGE 
                             <img src="/images/bkoutside.jpg"  alt="" title="slide-1"  width="1920" height="1123" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
+                             LAYERS 
                     
-                            <!-- LAYER NR. 1 -->
+                             LAYER NR. 1 
                             <div class="tp-caption tp-shape tp-shapewrapper  " 
                                  id="slide-116-layer-11" 
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
@@ -35,13 +35,13 @@
                                 style="z-index: 5;background-color:rgba(10, 10, 10, 0.50);background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;"> </div> 
                         </li>  
                         
-                        <!-- SLIDE  -->
+                         SLIDE  
                         <li data-index="rs-116" data-transition="slidingoverlayup" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="http://placehold.it/100x50"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Slide-2" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                            <!-- MAIN IMAGE -->
+                             MAIN IMAGE 
                             <img src="/images/bkinside.jpg"  alt="" title="slide-2"  width="1920" height="1123" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
+                             LAYERS 
                     
-                            <!-- LAYER NR. 1 -->
+                             LAYER NR. 1 
                             <div class="tp-caption tp-shape tp-shapewrapper  " 
                                  id="slide-116-layer-11" 
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
@@ -64,13 +64,13 @@
                                 style="z-index: 5;background-color:rgba(10, 10, 10, 0.50);background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;"> </div> 
                         </li>  
 						
-                        <!-- SLIDE  -->
+                         SLIDE  
                         <li data-index="rs-116" data-transition="slidingoverlayup" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="http://placehold.it/100x50"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Slide-3" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                            <!-- MAIN IMAGE -->
+                             MAIN IMAGE 
                             <img src="/images/bkinside2.jpg"  alt="" title="slide-3"  width="1920" height="1123" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
+                             LAYERS 
                     
-                            <!-- LAYER NR. 1 -->
+                             LAYER NR. 1 
                             <div class="tp-caption tp-shape tp-shapewrapper  " 
                                  id="slide-116-layer-11" 
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
@@ -93,13 +93,13 @@
                                 style="z-index: 5;background-color:rgba(10, 10, 10, 0.50);background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;"> </div> 
                         </li>  
 						
-                        <!-- SLIDE  -->
+                         SLIDE  
                         <li data-index="rs-116" data-transition="slidingoverlayup" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="http://placehold.it/100x50"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Slide-4" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                            <!-- MAIN IMAGE -->
+                             MAIN IMAGE 
                             <img src="/images/bkinside3.jpg"  alt="" title="slide-4"  width="1920" height="1123" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
+                             LAYERS 
                     
-                            <!-- LAYER NR. 1 -->
+                             LAYER NR. 1 
                             <div class="tp-caption tp-shape tp-shapewrapper  " 
                                  id="slide-116-layer-11" 
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
@@ -125,6 +125,15 @@
                     <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
                 </div>
                 <!-- END REVOLUTION SLIDER -->
+
+                <div class="rev_slider_wrapper fullscreen-container" style="width:150%;">
+                    <img class="mySlides" src="/images/bkinside3.jpg" style="width:100%">
+                    <img class="mySlides" src="/images/bkinside2.jpg" style="width:100%">
+                    <img class="mySlides" src="/images/bkinside.jpg" style="width:100%">
+                </div>
+                
+                
+                
                 
                 <!-- Section -->
                 <div class="it_section content_section white_section hide_text_shadow bg_color35">
@@ -213,4 +222,6 @@
                     </div>
                 </div>
                 <!-- End Section -->
+        </div>
     </div>
+</div>

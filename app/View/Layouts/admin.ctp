@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CQL SkyCompass | <?= $title_for_layout; ?></title>
+  <title>SHB LLC SkyCompass</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	
@@ -27,8 +27,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/adminPanel/dist/css/skins/skin-blue.min.css">
-  <link href='/plugins/fullcalendar/lib/fullcalendar.min.css' rel='stylesheet' />
-<link href='/plugins/fullcalendar/lib/fullcalendar.print.css' rel='stylesheet' media='print' />
+ 
 <link rel="stylesheet" href="/adminPanel/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 <link href='/plugins/fullcalendar/scheduler.min.css' rel='stylesheet' />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -54,38 +53,18 @@
 			],
 			toolbar: "<?php if ($this->request->params['controller'] == 'content' && $this->request->params['action'] == 'admin_edit'): ?>save | <?php endif; ?>undo redo | formatselect | fontselect | fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent blockquote | link image media",
 			relative_urls : false,
-			width: 786,
+			width: 1380,
 			doctype: '<!DOCTYPE html>',
 			image_advtab: true,
 			table_advtab: true,
 			table_cell_advtab: true,
 			table_row_advtab: true,
 			//file_browser_callback: RoxyFileBrowser,
-                external_filemanager_path:"/adminPanel/plugins/filemanager/",
+                external_filemanager_path:"/adminPanel/plugins/filemanager/", //Attaches tinymce to filemanager plugin here
    filemanager_title:"Your Site " ,
    external_plugins: { "filemanager" : "/adminPanel/plugins/filemanager/plugin.min.js"},
-			<?php if ($this->request->params['controller'] == 'content' && $this->request->params['action'] == 'admin_edit'): ?>
-    		save_enablewhendirty: false,
-			save_onsavecallback: function() {
-				$.blockUI({ message: 'Please wait...'}); 
-
-				var jqxhr = $.post("/admin/content/ajaxSave", { 'id': <?php echo $content['Content']['id']; ?>, 'content': tinymce.get('ContentContent').getContent() }, function(data) {
-					if (data == 'ok') {
-						$(".blockMsg").html('<span style="color: #090; font-weight: bold;">Changes saved.</span>')
-						setTimeout($.unblockUI, 500);
-					} else {
-						console.log(data);
-						$(".blockMsg").html('<span style="color: #900; font-weight: bold;">Changes could not be saved.</span>')
-						setTimeout($.unblockUI, 1000);
-					}
-				})
-				.fail(function() {
-					$(".blockMsg").html('<span style="color: #900; font-weight: bold;">Changes could not be saved.</span>')
-					setTimeout($.unblockUI, 1000);
-				});
-			},
-			<?php endif; ?>
-			content_css : "/_/css/bootstrap.min.css,/_/css/bootstrap-theme.min.css,/css/editor.css?v=14,http://fonts.googleapis.com/css?family=Roboto:400,500,700|Oswald:400,700",
+			
+			content_css : "/_/css/bootstrap.min.css,/_/css/bootstrap-theme.min.css,/css/editor.css",
 			extended_valid_elements : "img[!src|border:0|alt|title|width|height|style]a[name|href|target|title|onclick]",
 		  	valid_children : "+body[style]",
 		    style_formats: [
@@ -98,7 +77,12 @@
 		       title: 'Float Right',
 		       selector: 'img', 
 		       classes: 'right'
-		    }
+		    },
+                    {
+                        title: 'Client Testimonial Title',
+                        selector: 'h2',
+                        classes: 'client-testimonial'
+                    }
 		    ],
 		    table_cell_class_list: [
 		        {title: 'None', value: ''},
@@ -182,11 +166,11 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="/admin" class="logo">
+    <a href="/admin/content" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>CQL</b></span>
+      <span class="logo-mini"><b>SC</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">CQL <b>Sky</b>Compass</span>
+      <span class="logo-lg"><b>Sky</b>Compass</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -198,47 +182,26 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <?= $this->element('admin/messages'); ?>
-          <!-- Notifications: style can be found in dropdown.less -->
-          <?= $this->element('admin/notifications'); ?>
-          <!-- Tasks: style can be found in dropdown.less -->
-          <?= $this->element('admin/tasks'); ?>
-          <!-- User Account: style can be found in dropdown.less -->
+        
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/adminPanel/uploads/default.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?= $currentUser['first_name'] . " " . $currentUser['last_name']; ?></span>
+              <img src="/adminPanel/uploads/shadowfigure.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="/adminPanel/uploads/default.jpg" class="img-circle" alt="User Image">
+                <img src="/adminPanel/uploads/shadowfigure.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?= $currentUser['first_name'] . " " . $currentUser['last_name']; ?>
-                  <small>Member since <?= date('M Y', strtotime($currentUser['created'])); ?></small>
+                 Admin
+    
                 </p>
               </li>
-              <!-- Menu Body -->
-<!--              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                 /.row 
-              </li>-->
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="/admin/users/profile" class="btn btn-default btn-flat">Profile</a>
+                <!--  <a href="/admin/users/profile" class="btn btn-default btn-flat">Profile</a> -->
                 </div>
                 <div class="pull-right">
                   <a href="/admin/users/logout" class="btn btn-default btn-flat">Sign out</a>
@@ -247,9 +210,9 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
+          <!--<li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-check-square-o"></i></a>
-          </li>
+          </li>-->
         </ul>
       </div>
     </nav>
@@ -261,10 +224,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/adminPanel/uploads/default.jpg" class="img-circle" alt="User Image">
+          <img src="/adminPanel/uploads/shadowfigure.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?= $currentUser['first_name'] . " " . $currentUser['last_name']; ?></p>
+          <p>Admin</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -318,10 +281,6 @@
     reserved.
   </footer>
 
- <!-- This is where the sidebar would go if i need it - it's an element now -->
-  <?= $this->element('modals/entry'); ?>
-<?= $this->element('modals/expense'); ?>
- <?= $this->element('modals/expense_report'); ?>
 <div id="dialog" style="display: none">
 
 </div>
@@ -355,12 +314,7 @@
         
           <h3 class="control-sidebar-heading">Job Task Lists</h3>
           <hr>
-          <?php if(!empty($jobtasklists)) {
-                  foreach($jobtasklists as $tl) {
-                      echo $this->element('jobtasklist', array('entry' => $tl));
-                      echo "<hr>";
-                  }
-          } ?>
+         
           
       </div>
       <!-- /.tab-pane -->
@@ -397,12 +351,7 @@
 <script src="/adminPanel/plugins/chartjs/Chart.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--<script src="/adminPanel/dist/js/pages/dashboard2.js"></script>-->
-<!-- AdminLTE for demo purposes -->
-<script src="/_/js/modals.js"></script>
-<script src='/plugins/fullcalendar/lib/moment.min.js'></script>
 
-<script src='/plugins/fullcalendar/lib/fullcalendar.min.js'></script>
-<script src='/plugins/fullcalendar/scheduler.min.js'></script>
 
 <!-- bootstrap datepicker -->
 <script src="/adminPanel/plugins/datepicker/bootstrap-datepicker.js"></script>
@@ -426,45 +375,10 @@
       "autoWidth": false,
       "order": [[0, "desc"]]
     });
-    $('.notifications-dataTable').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": false,
-      "pageLength": 50
-    });
-    $('.approval-dataTable').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "order": [[2,"desc"]]
-    });
-    $(".datepicker").datepicker();
     
-    $("#expenseReportGenerate").click(function(e) {
-        e.preventDefault();
-        $start = new Date($("#startDateReport").val());
-        $end = new Date($("#endDateReport").val());
-                window.location = "/admin/expenses/expenseExport/" + 
-                        $start.getFullYear() + "-" + ($start.getMonth()+1) + "-" + $start.getDate() + "/" + 
-                        $end.getFullYear() + "-" + ($end.getMonth()+1) + "-" + $end.getDate()
-        
-    });
- 
+   
+    
 	$(function() {
-            
-            //Make the dashboard widgets sortable Using jquery UI
-  $(".connectedSortable").sortable({
-    placeholder: "sort-highlight",
-    connectWith: ".connectedSortable",
-    handle: ".box-header, .nav-tabs",
-    forcePlaceholderSize: true,
-    zIndex: 999999
-  });
-  $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
             
             $(".fancybox").fancybox({
                     'autoScale': true});
@@ -487,236 +401,10 @@
 			return false;
 		});
                 
-                 $.widget( "custom.combobox", {
-      _create: function() {
-        this.wrapper = $( "<span>" )
-          .addClass( "custom-combobox" )
-          .insertAfter( this.element );
- 
-        this.element.hide();
-        this._createAutocomplete();
-        this._createShowAllButton();
-      },
- 
-      _createAutocomplete: function() {
-        var selected = this.element.children( ":selected" ),
-          value = selected.val() ? selected.text() : "";
-          
-        this.input = $( "<input>" )
-          .appendTo( this.wrapper )
-          .val( value.trim() )
-          .attr( "title", "" )
-          .addClass( "custom-combobox-input form-control" )
-          .tooltip({
-            classes: {
-              "ui-tooltip": "ui-state-highlight"
-            }
-          })
-          .autocomplete({
-            delay: 0,
-            minLength: 0,
-            source: $.proxy( this, "_source" )
-          });
-                  
-            this.input
-                    .autocomplete( "instance" )._renderItem = function( ul, item ) {
-                       
-              $class = item.option.attributes.class.value;
-      
-            return $( "<li value='"+ item.value.trim() + "' class='" + $class +"' >" + item.label + "</li>")
-        .appendTo( ul );
-    };
-          
- 
-        this._on( this.input, {
-          autocompleteselect: function( event, ui ) {
-            ui.item.option.selected = true;
-            this._trigger( "select", event, {
-              item: ui.item.option
-            });
-          },
- 
-          autocompletechange: "_removeIfInvalid"
-        });
-      },
-  
-      _createShowAllButton: function() {
-        var input = this.input,
-          wasOpen = false;
- 
-        $( "<a>" )
-          .attr( "tabIndex", -1 )
-          .attr( "title", "Show All Items" )
-          .tooltip()
-          .html('<i class="fa fa-2x fa-angle-down"></i>')
-          .appendTo( this.wrapper )
-          .button({
-            icons: {
-              primary: "ui-icon-triangle-1-s"
-            },
-            text: false
-          })
-          .removeClass( "ui-corner-all" )
-          .addClass( "custom-combobox-toggle ui-corner-right" )
-          .on( "mousedown", function() {
-            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
-          })
-          .on( "click", function() {
-            input.trigger( "focus" );
- 
-            // Close if already visible
-            if ( wasOpen ) {
-              return;
-            }
- 
-            // Pass empty string as value to search for, displaying all results
-            input.autocomplete( "search", "" );
-          });
-      },
- 
-      _source: function( request, response ) {
-        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-        response( this.element.children( "option" ).map(function() {
-          var text = $( this ).text();
-          if ( this.value && ( !request.term || matcher.test(text) ) )
-            return {
-              label: text,
-              value: text.trim(),
-              option: this
-            };
-        }) );
-      },
- 
-      _removeIfInvalid: function( event, ui ) {
- 
-        // Selected an item, nothing to do
-        if ( ui.item ) {
-          return;
-        }
- 
-        // Search for a match (case-insensitive)
-        var value = this.input.val(),
-          valueLowerCase = value.toLowerCase(),
-          valid = false;
-        this.element.children( "option" ).each(function() {
-          if ( $( this ).text().toLowerCase() === valueLowerCase ) {
-            this.selected = valid = true;
-            return false;
-          }
-        });
- 
-        // Found a match, nothing to do
-        if ( valid ) {
-          return;
-        }
- 
-        // Remove invalid value
-        this.input
-          .val( "" )
-          .attr( "title", value + " didn't match any item" )
-          .tooltip( "open" );
-        this.element.val( "" );
-        this._delay(function() {
-          this.input.tooltip( "close" ).attr( "title", "" );
-        }, 2500 );
-        this.input.autocomplete( "instance" ).term = "";
-      },
- 
-      _destroy: function() {
-        this.wrapper.remove();
-        this.element.show();
-      }
-    });
- 
-    $( ".select2" ).combobox();
-
+                
 </script>
 
-<script type="text/javascript">
-     
-          var box = [];
-          $(".message-link").click(function(event, ui) {
-              event.preventDefault();
-              if(box[$(this).data('chatid')]) {
-                  box.chatbox("option", "boxManager").toggleBox();
-              }
-              else {
-                  $user = $(this).data('user');
-                  $url = $(this).attr('href');
-                  $boxid = $(this).data('chatid');
-                  box[$(this).data('chatid')] = $("#chat_div").chatbox({id:"<?= $currentUser['first_name']; ?>", 
-                                                user:{key : "value"},
-                                                title : $user,
-                                                messageSent : function(id, user, msg) {
-                                                    console.log(id + " said: " + msg);
-                                                    var encoded = encodeURIComponent(msg);
-                                                    $.ajax(
-                                                    {
-                                                        url: '/admin/messages/sendMessage/' + $boxid + '/' + encoded
-                                                    }).done(function(data) {
-                                                      //  alert(data);
-                                                        $message = msg;
-                                                        $("#chat_div").chatbox("option", "boxManager").addMsg(id, $message);
-                                                        });
-                                                    //$("#chat_div").chatbox("option", "boxManager").addMsg(id, msg);
-                                                }});
-                     
-                                            $.ajax(
-                                                    {
-                                                        url: $url,
-                                                        dataType: 'json'
-                                                    }).done(function(data) {
-                                                      //  alert(data);
-                                                      
-                                                        $.each(data, function(name, message) {
-                                                            
-                                                            $("#chat_div").chatbox("option", "boxManager").addMsg(message.user, message.message);
-                                                        });
-                                                        
-                                                        });
-                                                        
-                        
-              }
-          });
-  
-        var fileName = "<?= $config['site.faq_file']; ?>";
-        var width = $(window).width();
-var height = $(window).height();
-
-// Provide some space between the window edges.
-width = width - 50;
-height = height - 50; // iframe height will need to be even less to account for space taken up by dialog title bar, buttons, etc.
-
-            $("#faq-link").click(function (r) {
-                r.preventDefault();
-                $("#dialog").dialog({
-                    modal: true,
-                    title: fileName,
-                    width: width,
-                    height: height,
-                    buttons: {
-                        Close: function () {
-                            $(this).dialog('close');
-                        }
-                    },
-                    open: function () {
-                        var object = "<object data=\"{FileName}\" type=\"application/pdf\" width=\"100%\" height=\"100%\">";
-                        object += "If you are unable to view file, you can download from <a href = \"{FileName}\">here</a>";
-                        object += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
-                        object += "</object>";
-                        object = object.replace(/{FileName}/g, fileName);
-                        $("#dialog").html(object);
-                    }
-                });
-            });
-       
-    $('.ls-modal').fancybox({
-			  'width'	: '90%',
-			  'height'	: '90%',
-			  'type'	: 'iframe',
-			  'autoScale'   : false
-      });
-    </script>
+   
 
 <style>
     .ui-dialog {

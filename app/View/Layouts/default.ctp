@@ -26,6 +26,7 @@
      <meta name="Copyright" content="" />
      <meta name="viewport" content="width=device-width, initial-scale=1">
      
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
      <!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
      <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
      <link rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon">
@@ -81,49 +82,51 @@
     .body{
         font-family: "Palatino Linotype";
     }
+    
+    
+    .mySlides {display:none;}
+
 </style>
 <body class="site_full  menu_no_transparent classic_menu horizontal_menu light_header dark_sup_menu menu_light_transparent">
 
 
 <div id="main_wrapper">
-    
     <!-- Header -->
     <header id="site_header">
         <div id="nav_bar" class="hm_sticky">
             <div class="content"> 
-                
                 <!-- Logo -->
-                <div id="logo"> 
-                    <a href="/" target="_self"> 
-                        <img class="normal_logo" src="/images/small_shb_logo.jpg" width="600" height="208" alt="LookUp"> 
-                        <img class="normal_logo light_logo" src="/images/small_shb_logo.jpg" width="600" height="208" alt="LookUp">
-                    </a> 
+                <div id="logo" style="height: 200px; margin-top: 15px;"> 
+                    <!--<a href="/" target="_self">--> 
+                        <!--<img class="normal_logo" src="/images/small_shb_logo.jpg" width="auto" height="208" alt="LookUp">--> 
+                        <img class="normal_logo light_logo" src="/images/small_shb_logo.jpg" width="auto" height="208" alt="LookUp">
+                    <!--</a>--> 
                 </div>
                 <nav id="main_nav" class="f_right">
                     <div id="nav_menu"> <span class="mobile_menu_trigger"><a href="#" class="nav_trigger"><span></span></a></span>
                         <ul id="navy" class="clearfix">
                             <li class="normal_menu current_page_item"> <a href="/"><span>Home</span></a></li>
-                            <li class="normal_menu current_page_item"> <a href="/pages/aboutus"><span>About Us</span></a>
+                            <li class="normal_menu current_page_item"> <a href="/about"><span>About Us</span></a>
 				<ul>
-                                    <li class="normal_menu"><a href="/pages/aboutus/#Bio"><span>Biography</span></a></li>
-                                    <li class="normal_menu"><a href="/pages/aboutus/#CT"><span>Client Testimonials</span></a></li>
+                                    <li class="normal_menu"><a href="/about/#Bio"><span>Biography</span></a></li>
+                                    <li class="normal_menu"><a href="/about/#CT"><span>Client Testimonials</span></a></li>
 				</ul>
                             </li> 
-                            <li class="normal_menu current_page_item"> <a href="/pages/buildwus"><span>Building With Us</span></a>
+                            <li class="normal_menu current_page_item"> <a href="/buildwithus"><span>Building With Us</span></a>
 				<ul>
-                                    <li class="normal_menu"><a href="/"><span>Building Process</span></a></li>
-                                    <li class="normal_menu"><a href="/"><span>Stone House Difference</span></a></li>
-                                    <li class="normal_menu"><a href="/"><span>Build on Your Lot</span></a></li>
+                                    <li class="normal_menu"><a href="/buildwithus/#buildingprocess"><span>Building Process</span></a></li>
+                                    <li class="normal_menu"><a href="/buildwithus/#stonehousedifference"><span>Stone House Difference</span></a></li>
+                                    <li class="normal_menu"><a href="/buildwithus/#buildonyourlot"><span>Build on Your Lot</span></a></li>
 				</ul>
                             </li>
-                            <li class="normal_menu current_page_item"> <a href="/pages/gallery"><span>Gallery</span></a>
+                            <li class="normal_menu current_page_item"> <a href="/galleries"><span>Gallery</span></a>
 				<ul>
                                     <li class="normal_menu"><a href="/"><span>House Design</span></a></li>
                                     <li class="normal_menu"><a href="/"><span>Portfolio</span></a></li>
 				</ul>
                             </li>
-                            <li class="normal_menu current_page_item"> <a href="/pages/available"><span>Available Lots</span></a></li>
-                            <li class="normal_menu current_page_item"> <a href="/pages/news"><span>News</span></a></li>
+                            <li class="normal_menu current_page_item"> <a href="/galleries/available"><span>Available Lots</span></a></li>
+                            <li class="normal_menu current_page_item"> <a href="/news"><span>News</span></a></li>
                             <li class="normal_menu current_page_item"> <a href="/pages/contactus"><span>Contact Us</span></a></li>
                         </ul>
                     </div>
@@ -134,11 +137,12 @@
             </div>
         </div>
     </header>
+   
     <!-- End Header -->
-    
-    
+    <div class="content" style="margin-top: 120px;">
                 <?php echo $this->Session->flash(); ?>
                 <?php echo $this->fetch('content'); ?>
+    </div>
     
     <!-- Footer -->
     <footer id="footer" class="hm_dark_footer">
@@ -205,8 +209,11 @@
                     <div class="hm_column_con">
                         <ul id="menu-footer-menu" class="footer_menu f_right clearfix">
                             <li><a href="/">Home</a></li>
-                            <li><a href="/pages/aboutus">About Us</a></li>
-                            <li><a href="/pages/gallery">Gallery</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/pages/buildwithus">Building With Us</a></li>
+                            <li><a href="/galleries">Gallery</a></li>
+                            <li><a href="/galleries">Available Lots</a></li>
+                            <li><a href="/news">News</a></li>
                             <li><a href="/pages/contactus">Contact Us</a></li>
                         </ul>
                     </div>
@@ -346,6 +353,23 @@
 	});
  
 })(window.jQuery);
+</script>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
 </script>
 
 <!-- Asynchronous google analytics; this is the official snippet.
