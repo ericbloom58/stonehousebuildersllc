@@ -11,7 +11,7 @@
 				
     <div class="content_section bg_gray2 border_t_gray1" >
         <div class="full_content clearfix">
-            <div class="hm_columns content_block col-md-11 f_right">
+            <div class="hm_columns content_block col-md-12 f_right">
             
                     <!-- SideBar -->
                 <aside id="sidebar" class="hm_columns col-md-3 left_sidebar row_spacer">
@@ -46,10 +46,10 @@
             
             <!-- Portfolio Filter -->
                 
-                <aside id="sidebar" class="hm_columns col-md-7 left_sidebar row_spacer">    
+                <aside id="sidebar" class="hm_columns col-md-8 left_sidebar row_spacer">    
                     <?php foreach($galleries as $entry): ?>
                     <!-- One Post -->
-                    <li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
+                    <li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp"  style="margin: 20px;">
                         <div class="blog_grid_block">
                             <div class="feature_inner">
                                 <div class="feature_inner_corners">

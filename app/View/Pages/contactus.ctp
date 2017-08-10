@@ -40,7 +40,7 @@
                                                         <span class="c_title">Address</span>
                                                         <span class="c_detail">
                                                             <span class="c_name">Company:</span>
-                                                            <span class="c_desc">1234 Fake Street, Phoenix MD</span>
+                                                            <span class="c_desc">3314 Paper Mill Rd. Phoenix, MD 21131</span>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -156,8 +156,8 @@
                             
                             <!-- Google Map -->
                             <div class="google_map_con default_map no_box_shadow">
-                                <div class="google_map" data-lat="-12.043333" data-long="-77.028333" data-icon="img/location2.png" data-desc="Your Main location description" data-zoom="15" data-color="#000000" data-style="simple" data-controls="false" style="height:500px;">
-                                    <span class="location" data-lat="-12.040397656836609" data-long="-77.03373871559225" data-desc="Your sub location description 1" data-icon="img/location2.png"></span>
+                                <div class="google_map" data-lat="39.5192769" data-long="-76.5635607" data-icon="img/location2.png" data-desc="Your Main location description" data-zoom="15" data-color="#000000" data-style="simple" data-controls="false" style="height:300px;">
+                                    <span class="location" data-lat="39.5192769" data-long="-76.5635607" data-desc="Your sub location description 1" data-icon="img/location2.png"></span>
                                  </div>
                             </div>
                             <!-- End Google Map -->

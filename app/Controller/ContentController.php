@@ -50,6 +50,7 @@ class ContentController extends AppController {
     //Code for About Us Page
     public function about_us() {
         $this->set('biography', $this->Content->findById(13));
+        $this->set('whybwus', $this->Content->findById(14));
         $this->set('mission', $this->Content->findById(3));
         $this->set('whatwedo', $this->Content->findById(4));
         $this->set('testimonials', $this->Content->findById(5));
@@ -128,6 +129,9 @@ $this->set('galleries', $galleries);
     public function home()
     {
         $this->set('home', $this->Content->findById(7));
+        $this->loadModel('Gallery');
+        $galleries = $this->Gallery->find('all');
+        $this->set('galleries', $galleries);
     }
     //End of Code for Home PAge
     //

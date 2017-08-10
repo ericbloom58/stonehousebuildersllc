@@ -3,7 +3,7 @@
     
     	
     <div class="content_section page_title default">
-        <div class="content clearfix" style="margin-top:100px;">
+        <div class="content clearfix" style="margin-top:100px; margin-left: 200px;">
             <h1>Build With Us</h1>
         </div>
     </div>
@@ -17,7 +17,7 @@
                         <div class="section_content container">
                             
                             <!-- Row -->
-                            <div class="rows_container clearfix">
+                            <div class="rows_container clearfix" style="margin-left: 200px;">
                                 <div class="columns_con columns_normall clearfix">
                                     
                                     <!-- Column -->

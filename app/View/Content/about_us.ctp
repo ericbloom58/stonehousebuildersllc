@@ -1,7 +1,7 @@
     
     	
     <div class="content_section page_title default">
-        <div class="content clearfix" style="margin-top:100px;">
+        <div class="content clearfix" style="margin-top:100px; margin-left:200px;">
             <h1>About Us</h1>
         </div>
     </div>
@@ -16,7 +16,7 @@
                         <div class="section_content container">
                             
                             <!-- Row -->
-                            <div class="rows_container clearfix">
+                            <div class="rows_container clearfix" style="margin-left: 200px;">
                                 <div class="columns_con columns_normall clearfix">
                                     
                                     <!-- Column -->
@@ -30,7 +30,7 @@
                                                 <div class="hm_divider divi_border1 divi_left divi_i_c divi_mid default_boc default_bgc divi_space4 divi_hi2"></div>
                                                 <div class="hm_text_sc">
                                                    
-                                                    <?= $biography['Content']['content']; ?>
+                                                    <?= $whybwus['Content']['content']; ?>
                                                         
                                                        
                                                 </div>
@@ -102,7 +102,7 @@
                         <div class="section_content container">
                             
                             <!-- Row -->
-                            <div class="rows_container clearfix">
+                            <div class="rows_container clearfix" style="margin-left: 200px;">
                                 <div class="columns_con columns_normall clearfix">
                                     
                                     <!-- Column -->
@@ -110,7 +110,7 @@
                                         <div class="hm_column_out">
                                             <div class="hm_column_con clearfix col_padd1 column_spacer2">
                                                 <div class="main_title title_boxed no_border no_line align_left">
-                                                    <h2 class="bold1 fs20">><?= $testimonials['Content']['name']; ?></h2>
+                                                    <h2 class="bold1 fs20"><?= $testimonials['Content']['name']; ?></h2>
                                                 </div>
                                                 <div class="clear"></div>
                                                 <div class="hm_divider divi_border1 divi_left divi_i_c divi_mid default_boc default_bgc divi_space4 divi_hi2"></div>
