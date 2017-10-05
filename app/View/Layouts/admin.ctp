@@ -101,7 +101,8 @@
 		        "Courier New=courier new,courier;"+
 		        "Oswald=Oswald;"+
 		        "Roboto=Roboto",
-			fontsize_formats : "10px 12px 13px 14px 16px 18px 20px 22px 24px 26px 28px 30px 32px"
+			fontsize_formats : "10px 12px 13px 14px 16px 18px 20px 22px 24px 26px 28px 30px 32px",
+			paste_data_images: true
 		};
 
 		
@@ -179,6 +180,10 @@
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
+      <a href="/" class="logo"> 
+	  <span class="logo-lg"> View Site </span> 
+      <span class="logo-mini"><b>H</b></span>
+	  </a>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">

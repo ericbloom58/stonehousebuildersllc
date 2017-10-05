@@ -37,4 +37,4 @@
 <p>There is no blog in this section.</p>
 <?php endif; ?>
 
-<a role="button" href="/admin/blog/add" class="btn btn-primary small"><i class="fa fa-plus"></i> Create New Page</a>
+<a role="button" href="/admin/blog/add" class="btn btn-primary small"><i class="fa fa-plus"></i> Create New Post</a>

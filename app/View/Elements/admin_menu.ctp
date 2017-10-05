@@ -30,7 +30,7 @@
           </a>
           <ul class="treeview-menu">
               
-            <li><a href="/admin/users/add"><i class="fa fa-user-plus"></i> Add New User</a></li>
+            <!-- <li><a href="/admin/users/add"><i class="fa fa-user-plus"></i> Add New User</a></li> -->
             <li><a href="/admin/users"><i class="fa fa-list"></i> View All Users</a></li>
            
           </ul>

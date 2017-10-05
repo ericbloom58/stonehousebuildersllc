@@ -68,7 +68,7 @@
                                                 </div>
                                                 <ul class="list_icon circle_arrows colored clearfix">
                                                     <?php foreach($galleries as $entry): ?>
-                                                    <li><a href="/pages/gallery<?= $entry['Gallery']['id']; ?>"><?= $entry['Gallery']['name']; ?></a></li>
+                                                    <li><a href="/content/gallery/<?= $entry['Gallery']['id']; ?>"><?= $entry['Gallery']['name']; ?></a></li>
                                                     <?php endforeach; ?>
                                                 </ul>
                                             </div>

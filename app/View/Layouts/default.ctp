@@ -231,29 +231,29 @@
 
 <!-- Grab Google CDN's jQuery. fall back to local if necessary --> 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-<script>window.jQuery || document.write("<script src='js/jquery-1.12.4.min.js'>\x3C/script>")</script> 
-<script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"></script> 
-<script type="text/javascript" src="js/plugins.min.js"></script> 
+<script>window.jQuery || document.write("<script src='/js/jquery-1.12.4.min.js'>\x3C/script>")</script> 
+<script type="text/javascript" src="/js/jquery-migrate-1.4.1.min.js"></script> 
+<script type="text/javascript" src="/js/plugins.min.js"></script> 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvq9V76hzF0heGkAhUc3MqnzO7VQZhN_U"></script> 
 
 <!-- this is where we put our custom functions --> 
 <!-- don't forget to concatenate and minify for production --> 
-<script type="text/javascript" src="js/functions.js"></script> 
+<script type="text/javascript" src="/js/functions.js"></script> 
 
 <!-- REVOLUTION JS FILES -->
-<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.themepunch.revolution.min.js"></script>
 
 <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->	
-<script type="text/javascript" src="js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="/js/extensions/revolution.extension.video.min.js"></script>
 
 <script type="text/javascript">
 (function($){
@@ -266,7 +266,7 @@
         }else{
             revapi36 = $("#rev_slider_36_1").show().revolution({
                 sliderType:"standard",
-                jsFileLocation:"js/",
+                jsFileLocation:"/js/",
                 sliderLayout:"fullscreen",
                 dottedOverlay:"none",
                 delay:6000,
@@ -366,6 +366,23 @@
 	});
  
 })(window.jQuery);
+</script>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
 </script>
 
 <!-- Asynchronous google analytics; this is the official snippet.

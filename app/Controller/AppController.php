@@ -61,6 +61,7 @@ class AppController extends Controller {
 
     public function beforeFilter() {
         $this->Auth->allow('index', 'view', 'display', 'home', 'about_us', 'news', 'galleries', 'buildwithus', 'gallery');
+		
         
         
 	Router::connect('/', array('controller' => 'content', 'action' => 'home'));

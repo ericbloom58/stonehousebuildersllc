@@ -49,8 +49,8 @@ class ContentController extends AppController {
     }
     //Code for About Us Page
     public function about_us() {
-        $this->set('biography', $this->Content->findById(13));
-        $this->set('whybwus', $this->Content->findById(14));
+        $this->set('biography', $this->Content->findById(2));
+        $this->set('whybwus', $this->Content->findById(13));
         $this->set('mission', $this->Content->findById(3));
         $this->set('whatwedo', $this->Content->findById(4));
         $this->set('testimonials', $this->Content->findById(5));
@@ -59,16 +59,16 @@ class ContentController extends AppController {
     
     public function galleries($available=null) {
         if($available === null) {
-        $homes = $this->Content->find('list', array(
-            'fields' => array('id','linked_gallery'),
+        $homes = $this->Content->find('all', array(
+          //  'fields' => array('id','linked_gallery'),
             'conditions' => array(
             'Content.page_type' => 'house'
         )));
         }
         else
         {
-             $homes = $this->Content->find('list', array(
-                 'fields' => array('id','linked_gallery'),
+             $homes = $this->Content->find('all', array(
+             //    'fields' => array('id','linked_gallery'),
                  'conditions' => array(
             'Content.page_type' => 'house',
                  'Content.available' => 'yes'
@@ -79,37 +79,43 @@ class ContentController extends AppController {
         $this->loadModel('Gallery');
        
         
-        $galleries = $this->Gallery->find('all', array('conditions' => array('folder' => $homes)));
+     //   $galleries = $this->Gallery->find('all', array('conditions' => array('folder' => $homes)));
 
-        foreach($galleries as $i => $gallery): 
-            $log_directory = WWW_ROOT . 'files' . DS . 'galleries' . DS . $gallery['Gallery']['folder'];
+        foreach($homes as $i => $gallery): 
+            $log_directory = WWW_ROOT . 'files' . DS . 'galleries' . DS . $gallery['Content']['linked_gallery'];
                 $files = array_diff(scandir($log_directory), array('.', '..'));
-         //   pr($files);
-    $galleries[$i]['Gallery']['first_image'] =  array_shift($files);
+            //pr($files);
+    $homes[$i]['Content']['first_image'] =  array_shift($files);
 
 
 endforeach;
 
 //pr($galleries); exit();
-$this->set('galleries', $galleries);
+$this->set('galleries', $homes);
     }
     
     public function gallery($id = null)
     {
-        $this->loadModel('Gallery');
-        $gallery = $this->Gallery->findById($id);
-        $content = $this->Content->findByLinkedGallery($gallery['Gallery']['folder']);
-        $this->set('content', $content);
-        //pr($content);
-        $galleries = $this->Gallery->find('all');
+       
+        $content = $this->Content->findById($id);
         
-        $log_directory = WWW_ROOT . 'files' . DS . 'galleries' . DS . $gallery['Gallery']['folder'];
+        //pr($content);
+        
+        $log_directory = WWW_ROOT . 'files' . DS . 'galleries' . DS . $content['Content']['linked_gallery'];
                 $files = array_diff(scandir($log_directory), array('.', '..'));
          //   pr($files);
-    $gallery['Gallery']['images'] =  $files;
+    $content['Gallery']['images'] =  $files;
+    $this->set('content', $content);
     
-    $this->set('gallery', $gallery);
-    $this->set('galleries', $galleries);
+    
+    $homes = $this->Content->find('all', array(
+             //    'fields' => array('id','linked_gallery'),
+                 'conditions' => array(
+            'Content.page_type' => 'house'
+                 
+        ),
+        'order' => 'Content.available DESC'));
+    $this->set('galleries', $homes);
     }
     //Code for News Blog
     public function news()
@@ -163,7 +169,17 @@ $this->set('galleries', $galleries);
     public function admin_add() {
         if ($this->request->is('post')) {
             //Added this line
-            
+            //pr($this->request->data);
+            if(isset($this->request->data['Content']['linked_gallery']) && !empty($this->request->data['Content']['linked_gallery'])){
+            $this->loadModel('Gallery');
+            $this->Gallery->create();
+            $this->Gallery->save(
+                    array(
+                        'name' => $this->request->data['Content']['linked_gallery'],
+                        'folder' => $this->request->data['Content']['linked_gallery']
+                    ));
+            }
+           
             if ($this->Content->save($this->request->data)) {
                 $this->Flash->success(__('Your content has been saved.'));
                 return $this->redirect(array('action' => 'index'));

@@ -24,7 +24,7 @@
                                         <div class="hm_column_out">
                                             <div class="hm_column_con clearfix col_padd1 column_spacer2">
                                                 <div class="main_title title_boxed no_border no_line align_left">
-                                                    <h2 class="bold1 fs20">Why Build With Us</h2>
+                                                    <h2 class="bold1 fs20"><?= $whybwus['Content']['name']; ?></h2>
                                                 </div>
                                                 <div class="clear"></div>
                                                 <div class="hm_divider divi_border1 divi_left divi_i_c divi_mid default_boc default_bgc divi_space4 divi_hi2"></div>

@@ -32,7 +32,7 @@
                         <h6 class="widget_title">House Selection</h6>
                         <ul class="cat_list_widget">
                             <?php foreach($galleries as $entry): ?>
-                            <li><a href="/content/gallery/<?= $entry['Gallery']['id']; ?>"><?= $entry['Gallery']['name']; ?></a></li>
+                            <li><a href="/content/gallery/<?= $entry['Content']['id']; ?>"><?= $entry['Content']['name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -49,14 +49,14 @@
                     <?= $content['Content']['name']; ?>
                     <?= $content['Content']['content']; ?>
                     <br><hr><br>
-                    <?php foreach($gallery['Gallery']['images'] as $entry): ?>
+                    <?php foreach($content['Gallery']['images'] as $entry): ?>
                     <!-- One Post -->
                     <li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
                         <div class="blog_grid_block">
                             <div class="feature_inner">
                                 <div class="feature_inner_corners">
-                                    <a class="img_popup" href="/files/galleries/<?= $gallery['Gallery']['folder'] . '/' . $entry; ?>">
-                                        <img src="/files/galleries/<?= $gallery['Gallery']['folder'] . '/' . $entry; ?>" alt="Clothes Vector">
+                                    <a class="img_popup" href="/files/galleries/<?= $content['Content']['linked_gallery'] . '/' . $entry; ?>">
+                                        <img src="/files/galleries/<?= $content['Content']['linked_gallery'] . '/' . $entry; ?>" alt="Clothes Vector">
                                         <span class="hm_plus_i"><i class="ico-plus10 hm_iii"></i></span>
                                     </a>
                                 </div>
